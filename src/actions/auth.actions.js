@@ -1,6 +1,7 @@
 import { auth, firestore } from 'firebase';
 import { authConstanst } from './constants';
 import { getRealtimeUsers } from './user.actions';
+import  { Redirect } from 'react-router-dom'
 
 
 export const signup = (user) => {
@@ -105,7 +106,7 @@ export function signInWithGoogle() {
                         }
                         localStorage.setItem('user', JSON.stringify(loggedInUser));
                         console.log('User logged in successfully...!');
-                        window.location.reload();
+                        window.location.replace('/')
                         // dispatch({
                         //     type: `${authConstanst.USER_LOGIN}_SUCCESS`,
                         //     payload: { user: loggedInUser }
